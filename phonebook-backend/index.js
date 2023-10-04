@@ -9,6 +9,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(morgan('tiny'))
+app.use(express.static('../phonebookFrontEnd/build'))
 
 let persons = [
     { 
@@ -95,15 +96,13 @@ app.post('/api/persons', (request, response) => {
     number: body.number
   }
 
-  console.log("Myrsky")
-
   persons = persons.concat(n_person)
 
   response.json(n_person)
 })
 
 
-const PORT = 3001
+const PORT = 80
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
