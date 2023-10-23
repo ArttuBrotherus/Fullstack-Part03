@@ -19,7 +19,7 @@ const Person = (props) => {
 
   return(
     <div>
-        {props.name} {props.luku}&nbsp;
+        {props.name} {props.phone}&nbsp;
         <button onClick={DeleteData}>
           delete
         </button>
